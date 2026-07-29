@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swatch.lab - Cyber Swatches & Palette Analyzer</title>
+  <!-- Google Fonts matching the homepage -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Blobs -->
+  <div class="blob b1" id="blob-primary"></div>
+  <div class="blob b2" id="blob-secondary"></div>
+  <div class="blob b3" id="blob-tertiary"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="logo">
+      <span class="logo-text">swatch<em>.lab</em></span>
+    </a>
+    <div class="nav-r">
+      <span class="badge" id="status-badge">[SYS.ACTIVE]</span>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="page">
+    
+    <!-- LEFT PANEL: Inputs & Named Presets -->
+    <section class="panel-left">
+      
+      <!-- Color Picker Input Card -->
+      <div class="card auth-card color-input-card">
+        <h2 class="auth-eyebrow">// Input Source</h2>
+        <div class="picker-row">
+          <div class="picker-wrapper">
+            <input type="color" id="color-picker" value="#f03ca8">
+          </div>
+          <div class="input-fields">
+            <div class="fg">
+              <label class="fl">HEX Code</label>
+              <input type="text" id="hex-input" class="fi" value="#f03ca8" placeholder="#000000">
+            </div>
+            <div class="fg">
+              <label class="fl">RGB Code</label>
+              <input type="text" id="rgb-input" class="fi" value="240, 60, 168" placeholder="0, 0, 0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML Named Colors Swatches Card -->
+      <div class="card swatch-card">
+        <h2 class="auth-eyebrow">// HTML Named Colors</h2>
+        <div class="search-row">
+          <input type="text" id="search-swatches" class="fi" placeholder="Filter by name (e.g. Tomato)...">
+        </div>
+        <div class="auth-tabs" id="color-tabs">
+          <button class="at active" data-tab="all">All</button>
+          <button class="at" data-tab="reds">Reds</button>
+          <button class="at" data-tab="greens">Greens</button>
+          <button class="at" data-tab="blues">Blues</button>
+          <button class="at" data-tab="neutrals">Neutrals</button>
+        </div>
+        <div class="swatches-grid" id="swatches-grid">
+          <!-- Swatches dynamically loaded by app.js -->
+        </div>
+      </div>
+
+      <!-- Pink Lover's Core Card -->
+      <div class="card pink-lover-card">
+        <h2 class="auth-eyebrow">// Pink Lover's Core</h2>
+        <p class="section-desc">A curated vault of custom pink presets and modifiers for the ultimate pink aesthetic.</p>
+        <div class="pink-presets">
+          <button class="nb pink-preset-btn" data-color="#FF007F">Neon Pink</button>
+          <button class="nb pink-preset-btn" data-color="#FFB7C5">Sakura Pink</button>
+          <button class="nb pink-preset-btn" data-color="#DA1884">Barbie Pink</button>
+          <button class="nb pink-preset-btn" data-color="#FFC1CC">Bubblegum</button>
+          <button class="nb pink-preset-btn" data-color="#B76E79">Rose Gold</button>
+          <button class="nb pink-preset-btn" data-color="#C08A80">Dusty Rose</button>
+        </div>
+        <div class="pink-modifier-row">
+          <button class="nb pinkify-btn" id="btn-pinkify">🌸 Pinkify Active Color</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT PANEL: Analytics Dashboard -->
+    <section class="panel-right">
+
+      <!-- active color values & Web Safe Checker -->
+      <div class="card active-value-card">
+        <h2 class="auth-eyebrow">// Core Values</h2>
+        <div class="values-grid">
+          <div class="value-box" data-copy="hex">
+            <span class="val-label">HEX</span>
+            <span class="val-code" id="output-hex">#F03CA8</span>
+            <span class="copy-hint">Click to Copy</span>
+          </div>
+          <div class="value-box" data-copy="rgb">
+            <span class="val-label">RGB</span>
+            <span class="val-code" id="output-rgb">rgb(240, 60, 168)</span>
+            <span class="copy-hint">Click to Copy</span>
+          </div>
+        </div>
+        
+        <div class="web-safe-row">
+          <div class="web-safe-status">
+            <span class="fl">Web Safe Standard:</span>
+            <span class="pill-badge" id="web-safe-badge">Checking...</span>
+          </div>
+          <button class="nb" id="btn-snap-safe">Snap to nearest Web-Safe</button>
+        </div>
+      </div>
+
+      <!-- Contrast Sandbox (Vice-Versa Previews) -->
+      <div class="card contrast-card">
+        <h2 class="auth-eyebrow">// Contrast Sandbox (Complementary Harmony)</h2>
+        <div class="contrast-header">
+          <span class="contrast-ratio" id="contrast-ratio">Contrast: 4.5:1</span>
+          <span class="badge" id="wcag-rating">AA PASS</span>
+        </div>
+        <div class="sandbox-previews">
+          <!-- Preview A: Active color on Complementary background -->
+          <div class="preview-box" id="preview-active-on-comp">
+            <span class="preview-text">Active Color Text on Complementary BG</span>
+          </div>
+          <!-- Preview B: Complementary color on Active background -->
+          <div class="preview-box" id="preview-comp-on-active">
+            <span class="preview-text">Complementary Text on Active Color BG</span>
+          </div>
+        </div>
+        <div class="comp-details">
+          <span class="fl">Complementary HEX:</span>
+          <code id="comp-hex-value" class="copyable-code">#0FC357</code>
+        </div>
+      </div>
+
+      <!-- Tonal Shades Grid -->
+      <div class="card shades-card">
+        <h2 class="auth-eyebrow">// Tonal Shades (LERP Gradients)</h2>
+        
+        <div class="shade-section">
+          <h3 class="section-title">Lighter Shades (5 Steps)</h3>
+          <div class="shades-row" id="lighter-shades">
+            <!-- Dynamic items -->
+          </div>
+        </div>
+
+        <div class="shade-section">
+          <h3 class="section-title">Darker Shades (5 Steps)</h3>
+          <div class="shades-row" id="darker-shades">
+            <!-- Dynamic items -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Triadic Harmony -->
+      <div class="card triadic-card">
+        <h2 class="auth-eyebrow">// Triadic Color Harmony (120° offsets)</h2>
+        <div class="triadic-container">
+          <div class="triadic-box" id="triadic-base">
+            <div class="triadic-color-block"></div>
+            <span class="triadic-label">Base</span>
+            <code class="triadic-val">#F03CA8</code>
+          </div>
+          <div class="triadic-box" id="triadic-one">
+            <div class="triadic-color-block"></div>
+            <span class="triadic-label">Triadic 1 (+120°)</span>
+            <code class="triadic-val">#A8F03C</code>
+          </div>
+          <div class="triadic-box" id="triadic-two">
+            <div class="triadic-color-block"></div>
+            <span class="triadic-label">Triadic 2 (+240°)</span>
+            <code class="triadic-val">#3CA8F0</code>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">Copied to Clipboard!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
