@@ -78,6 +78,11 @@ nav{
   text-decoration:none;
 }
 
+.logo-img{
+  height:32px;width:auto;
+  display:block;
+}
+
 .logo-text{
   font-family:var(--orb);
   font-size:1.2rem;
