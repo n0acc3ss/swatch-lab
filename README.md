@@ -1,4 +1,6 @@
-# swatch.lab 🌸 - Cyber Swatches & Palette Analyzer
+# swatch.lab - Color Swatches & Palette Analyzer
+
+![logo-swatchlab](https://github.com/n0acc3ss/swatch-lab/blob/main/assets%2Flogo-swatchlab.webp)
 
 A modern, high-fidelity static HTML/CSS/JS single-page application (SPA) that acts as a comprehensive color swatch catalog, real-time analyzer, and visual contrast checker.
 
