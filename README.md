@@ -1,13 +1,31 @@
-![logo-swatchlab](https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo_swatchlab.webp?raw=true)
+<div align="center">
+  <img src="https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo_swatchlab.webp?raw=true" width="340" alt="Swatch Lab logo" />
+
+  # Swatch Lab
+
+  **Color Swatches & Palette Analyzer.**
+  <br/>
+  No upload. No server. No build step.
+
+  [![Live app](https://img.shields.io/badge/live_app-launch-2ea44f?style=for-the-badge)](https://n0acc3ss.github.io/swatch-lab/)
+  [![License: GPL v3](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)](LICENSE)
+</div>
+
+<br/>
+
+A modern, high-fidelity static HTML/CSS/JS single-page application (SPA) that acts as a comprehensive color swatch catalog, real-time analyzer, and visual contrast checker.
+The user interface specifically replicates the cyberpunk dark-grid aesthetic of the `al.homelab` homepage, using matching custom fonts, ambient glowing blobs, scanline overlay, and grid patterns.
+
+## Features
+
+
+
 
 <div align="center">
 <h1>swatch.lab</h1>
-<h4>Color Swatches & Palette Analyzer</h4>
+<h4></h4>
 </div>
 
-A modern, high-fidelity static HTML/CSS/JS single-page application (SPA) that acts as a comprehensive color swatch catalog, real-time analyzer, and visual contrast checker.
-
-The user interface specifically replicates the cyberpunk dark-grid aesthetic of the `al.homelab` homepage, using matching custom fonts, ambient glowing blobs, scanline overlay, and grid patterns.
 
 ---
 
