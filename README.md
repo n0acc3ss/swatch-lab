@@ -1,8 +1,8 @@
 ![logo-swatchlab](https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo_swatchlab.webp?raw=true)
 
 <div align="center">
-# swatch.lab
-#### Color Swatches & Palette Analyzer
+<h1>swatch.lab</h1>
+<h4>Color Swatches & Palette Analyzer</h4>
 </div>
 
 A modern, high-fidelity static HTML/CSS/JS single-page application (SPA) that acts as a comprehensive color swatch catalog, real-time analyzer, and visual contrast checker.
