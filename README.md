@@ -1,4 +1,4 @@
-![logo-swatchlab](https://github.com/n0acc3ss/swatch-lab/blob/main/assets%2Flogo-swatchlab.webp)
+![logo-swatchlab](https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo_swatchlab.webp?raw=true)
 
 <div align="center">
 # swatch.lab
