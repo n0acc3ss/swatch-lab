@@ -12,13 +12,12 @@
 <br/>
 
 A modern, high-fidelity static HTML/CSS/JS single-page application (SPA) that acts as a comprehensive color swatch catalog, real-time analyzer, and visual contrast checker.
-The user interface specifically replicates the cyberpunk dark-grid aesthetic of the `al.homelab` homepage, using matching custom fonts, ambient glowing blobs, scanline overlay, and grid patterns.
 
 ---
 
 ## 🚀 Getting Started
 
-Simply open [swatchlab webapp](https://n0acc3ss.github.io/swatch-lab/) in any modern web browser. The app runs completely on the client side with **zero external server dependencies**.
+Simply open [swatchlab webapp](https://n0acc3ss.github.io/swatch-lab/) The web-app runs completely on the client side with **zero external server dependencies**.
 
 ---
 
