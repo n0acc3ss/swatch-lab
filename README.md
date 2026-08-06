@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo_swatchlab.webp?raw=true" width="340" alt="Swatch Lab logo" />
+  <img src="https://github.com/n0acc3ss/swatch-lab/blob/main/assets/logo-swatchlab.webp?raw=true" width="340" alt="Swatch Lab logo" />
 
   # Swatch Lab
 
